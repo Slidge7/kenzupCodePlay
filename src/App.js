@@ -8,6 +8,7 @@ import TravelHome from './screens/travel/TravelHome';
 import Tests1 from '../dumpfiles/Tests';
 import { SafeAreaView, StatusBar, StyleSheet } from 'react-native';
 import { lightMode } from './constants/appColors';
+import MyTabs from './screens/travel';
 
 const colors = lightMode;
 
@@ -37,6 +38,9 @@ const App = () => {
         <Stack.Screen options={{
           headerShown:false
         }} name="Tests1" component={Tests1} />
+        <Stack.Screen options={{
+          headerShown:false
+        }} name="MyTabs" component={MyTabs} />
       </Stack.Navigator>
     </NavigationContainer>
     </SafeAreaView>

@@ -24,6 +24,11 @@ const Home = () => {
         style={styles.btn}>
         <Text style={{color: 'white'}}>Go Test</Text>
       </TouchableOpacity>
+      <TouchableOpacity
+        onPress={() => navigation.navigate('MyTabs')}
+        style={styles.btn}>
+        <Text style={{color: 'white'}}>Tabs</Text>
+      </TouchableOpacity>
     </View>
   );
 };

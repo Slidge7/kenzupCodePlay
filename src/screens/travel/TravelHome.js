@@ -5,6 +5,7 @@ import Header from '../../components/travel/Header';
 import Search from '../../components/travel/Search';
 import SectionHeader from '../../components/travel/SectionHeader';
 import Categories from '../../components/travel/Categories';
+import ItemsList from '../../components/travel/ItemsList';
 
 const colors = lightMode;
 
@@ -20,6 +21,7 @@ const TravelHome = () => {
       <Search />
       <SectionHeader />
       <Categories />
+      <ItemsList />
     </View>
   );
 };
