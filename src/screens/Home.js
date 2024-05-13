@@ -29,6 +29,11 @@ const Home = () => {
         style={styles.btn}>
         <Text style={{color: 'white'}}>Tabs</Text>
       </TouchableOpacity>
+      <TouchableOpacity
+        onPress={() => navigation.navigate('PlaceDetail')}
+        style={styles.btn}>
+        <Text style={{color: 'white'}}>Place Detail</Text>
+      </TouchableOpacity>
     </View>
   );
 };

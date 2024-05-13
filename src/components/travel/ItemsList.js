@@ -66,7 +66,7 @@ const ItemsList = () => {
       data={placesData}
       renderItem={({item}) => <Item item={item} />}
       keyExtractor={item => item.id}
-      style={styles.categorieList}
+      style={{flex:1}}
     />
   );
 };

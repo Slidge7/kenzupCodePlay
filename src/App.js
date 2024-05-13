@@ -9,6 +9,8 @@ import Tests1 from '../dumpfiles/Tests';
 import { SafeAreaView, StatusBar, StyleSheet } from 'react-native';
 import { lightMode } from './constants/appColors';
 import MyTabs from './screens/travel';
+import PlaceDeatils from './screens/travel/PlaceDeatils';
+
 
 const colors = lightMode;
 
@@ -41,6 +43,9 @@ const App = () => {
         <Stack.Screen options={{
           headerShown:false
         }} name="MyTabs" component={MyTabs} />
+        <Stack.Screen options={{
+          headerShown:false
+        }} name="PlaceDetail" component={PlaceDeatils} />
       </Stack.Navigator>
     </NavigationContainer>
     </SafeAreaView>
