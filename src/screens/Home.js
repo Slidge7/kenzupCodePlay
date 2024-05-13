@@ -1,11 +1,18 @@
 import {View, Text, TouchableOpacity, StyleSheet} from 'react-native';
 import React from 'react';
 import { useNavigation } from '@react-navigation/native';
+import { useSelector, useDispatch } from 'react-redux';
+
 
 
 
 const Home = () => {
     const navigation = useNavigation();
+    const dispatch = useDispatch();
+    const isDarkMode = useSelector(state => state.isDarkMode);
+    const toggleDarkMode = () => {
+      dispatch({ type: 'TOGGLE_DARK_MODE' }); 
+    };
   return (
     <View style={styles.container}>
       <Text style={styles.Text}>Home</Text>
@@ -33,6 +40,11 @@ const Home = () => {
         onPress={() => navigation.navigate('PlaceDetail')}
         style={styles.btn}>
         <Text style={{color: 'white'}}>Place Detail</Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        onPress={() => toggleDarkMode()}
+        style={styles.btn}>
+        <Text style={{color:isDarkMode ? 'white' : 'black'}}>{isDarkMode ? 'Dark Mode' : 'Light Mode'} On</Text>
       </TouchableOpacity>
     </View>
   );

@@ -5,9 +5,8 @@ import LikesList from './LikesList';
 import History from './History';
 import Profile from './Profile';
 import Icon from 'react-native-vector-icons/FontAwesome5';
-import {lightMode} from '../../constants/appColors';
+import { useSelector, useDispatch } from 'react-redux';
 
-const colors = lightMode;
 
 const Tab = createBottomTabNavigator();
 
@@ -23,6 +22,9 @@ function MyTabs() {
 }
 
 function MyTabBar({state, descriptors, navigation}) {
+
+  const colors = useSelector(state => state.colors);
+
   const TabArr = [
     {route: 'Home', label: 'Home', icon: 'home'},
     {route: 'Likes', label: 'Likes', icon: 'heart'},

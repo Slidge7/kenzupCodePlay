@@ -11,7 +11,12 @@ const lightMode = {
 
 const darkMode = {
     darkBlue : "#001645",
-    lightBlue : "#0172B2",
+    lightBlue : "#001645",
+    whiteBlue : '#001645',
+    whiteTxt : "black",
+    halfWhiteTxt: "#001645",
+    lightGray: "#001645",
+    red:"green",
 }
 
 
