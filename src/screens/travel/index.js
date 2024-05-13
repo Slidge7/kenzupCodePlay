@@ -4,7 +4,10 @@ import TravelHome from './TravelHome';
 import LikesList from './LikesList';
 import History from './History';
 import Profile from './Profile';
-import Icon from 'react-native-vector-icons/FontAwesome6';
+import Icon from 'react-native-vector-icons/FontAwesome5';
+import {lightMode} from '../../constants/appColors';
+
+const colors = lightMode;
 
 const Tab = createBottomTabNavigator();
 
@@ -20,35 +23,37 @@ function MyTabs() {
 }
 
 function MyTabBar({state, descriptors, navigation}) {
+  const TabArr = [
+    {route: 'Home', label: 'Home', icon: 'home'},
+    {route: 'Likes', label: 'Likes', icon: 'heart'},
+    {route: 'History', label: 'History', icon: 'history'},
+    {route: 'Profile', label: 'Profile', icon: 'user-alt'},
+  ];
+
   return (
     <View style={{flexDirection: 'row'}}>
-      {state.routes.map((route, index) => {
-        const {options} = descriptors[route.key];
-        const label =
-          options.tabBarLabel !== undefined
-            ? options.tabBarLabel
-            : options.title !== undefined
-            ? options.title
-            : route.name;
+      {TabArr.map((route, index) => {
+        const {options} = descriptors[state.routes[index].key];
+        const label = route.label;
 
         const isFocused = state.index === index;
 
         const onPress = () => {
           const event = navigation.emit({
             type: 'tabPress',
-            target: route.key,
+            target: route.route,
             canPreventDefault: true,
           });
 
           if (!isFocused && !event.defaultPrevented) {
-            navigation.navigate(route.name, route.params);
+            navigation.navigate(route.route, route.params);
           }
         };
 
         const onLongPress = () => {
           navigation.emit({
             type: 'tabLongPress',
-            target: route.key,
+            target: route.route,
           });
         };
 
@@ -61,8 +66,19 @@ function MyTabBar({state, descriptors, navigation}) {
             testID={options.tabBarTestID}
             onPress={onPress}
             onLongPress={onLongPress}
-            style={{flex: 1,backgroundColor: isFocused ? '#222' : 'red'}}>
-            <Text style={{color: isFocused ? 'red' : '#222', fontWeight:'bold'}}>{label}</Text>
+            style={{
+              flex: 1,
+              backgroundColor: isFocused ? colors.lightBlue : colors.halfWhiteTxt,
+              alignItems: 'center',
+              justifyContent: 'center',
+              paddingVertical: 10,
+            }}>
+            <Icon name={route.icon} size={20} color={isFocused ? colors.whiteTxt : colors.lightGray} />
+
+            <Text
+              style={{color: isFocused ? colors.whiteTxt : colors.lightGray}}>
+              {label}
+            </Text>
           </TouchableOpacity>
         );
       })}

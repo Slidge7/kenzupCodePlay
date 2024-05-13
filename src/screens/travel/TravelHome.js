@@ -1,4 +1,4 @@
-import {View, StyleSheet} from 'react-native';
+import {View, StyleSheet, ScrollView} from 'react-native';
 import React from 'react';
 import {lightMode} from '../../constants/appColors';
 import Header from '../../components/travel/Header';
@@ -16,13 +16,13 @@ const userPic = require('../../assets/img/user_pic.png');
 
 const TravelHome = () => {
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container}>
       <Header userName={userName} userPic={userPic} />
       <Search />
       <SectionHeader />
       <Categories />
       <ItemsList />
-    </View>
+    </ScrollView>
   );
 };
 

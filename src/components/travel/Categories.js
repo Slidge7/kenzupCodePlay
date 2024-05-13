@@ -1,21 +1,8 @@
 import { View, Text, TouchableOpacity, StyleSheet, FlatList } from 'react-native'
 import React, { useState } from 'react'
+import { categoriesList } from '../../constants/localData'
 
-const categorisData = [
-    {
-      id: '1',
-      title: 'First Item',
-    },
-    {
-      id: '2',
-      title: 'Second Item',
-    },
-    {
-      id: '3',
-      title: 'Third Item',
-    },
-  ];
-
+const categorisData = categoriesList;
 
 const Category = ({category, active, setActive}) => {
     return (
@@ -48,8 +35,8 @@ const styles = StyleSheet.create({
     categoryBtn:{
         marginHorizontal:5,
         borderRadius:20,
-        paddingHorizontal:20,
-        paddingVertical:15,
+        paddingHorizontal:15,
+        paddingVertical:10,
     },
     categoryTxt:{
         color:'gray'

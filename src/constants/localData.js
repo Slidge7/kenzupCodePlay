@@ -278,4 +278,28 @@ const placesData = [
   },
 ];
 
-export {placesData};
+
+const categoriesList = [
+  {
+    id: 1,
+    title:'Adventure'
+  },
+  {
+    id: 2,
+    title:'City'
+  },
+  {
+    id: 3,
+    title:'Nature'
+  },
+  {
+    id: 4,
+    title:'Landmarks'
+  },
+  {
+    id: 5,
+    title:'Culture'
+  },
+]
+
+export {placesData, categoriesList};
