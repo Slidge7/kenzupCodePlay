@@ -1,13 +1,12 @@
 import {View, StyleSheet, ScrollView} from 'react-native';
 import React from 'react';
-import {lightMode} from '../../constants/appColors';
 import Header from '../../components/travel/Header';
 import Search from '../../components/travel/Search';
 import SectionHeader from '../../components/travel/SectionHeader';
 import Categories from '../../components/travel/Categories';
 import ItemsList from '../../components/travel/ItemsList';
 
-const colors = lightMode;
+
 
 const userName = 'David';
 const userPic = require('../../assets/img/user_pic.png');

@@ -4,14 +4,21 @@ import LinearGradient from 'react-native-linear-gradient';
 import {lightMode} from '../constants/appColors';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import {useNavigation} from '@react-navigation/native';
+import { fetchPlaces } from '../core/store/reducers/placeReducer';
+import { useDispatch } from 'react-redux';
+
+
 
 const colors = lightMode;
 const gradientColors = [colors.lightBlue, colors.darkBlue];
 
 const ItemDeatils = () => {
+  const dispatch = useDispatch();
+  dispatch(fetchPlaces());
+
   const navigation = useNavigation();
   useEffect(() => {
-    const timeout = setTimeout(() => navigation.navigate('TravelHome'), 1500);
+    const timeout = setTimeout(() => navigation.navigate('MyTabs'), 1500);
 
     return () => clearTimeout(timeout);
   }, []);

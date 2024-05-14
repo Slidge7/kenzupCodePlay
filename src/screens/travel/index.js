@@ -23,7 +23,7 @@ function MyTabs() {
 
 function MyTabBar({state, descriptors, navigation}) {
 
-  const colors = useSelector(state => state.colors);
+  const colors = useSelector(state => state.uiManager.colors);
 
   const TabArr = [
     {route: 'Home', label: 'Home', icon: 'home'},

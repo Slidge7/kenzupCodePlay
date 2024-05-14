@@ -1,10 +1,6 @@
 import { darkMode, lightMode } from "../../../constants/appColors";
 
 
-const switchMode = (state) =>{
-    state.colors = state.isDarkMode ? darkMode : lightMode ;
-}
-
 const initialState = {
     colors: {},
     isDarkMode:false,

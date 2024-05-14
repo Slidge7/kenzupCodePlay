@@ -9,7 +9,7 @@ import { useSelector, useDispatch } from 'react-redux';
 const Home = () => {
     const navigation = useNavigation();
     const dispatch = useDispatch();
-    const isDarkMode = useSelector(state => state.isDarkMode);
+    const isDarkMode = useSelector(state => state.uiManager.isDarkMode);
     const toggleDarkMode = () => {
       dispatch({ type: 'TOGGLE_DARK_MODE' }); 
     };
@@ -43,7 +43,7 @@ const Home = () => {
       </TouchableOpacity>
       <TouchableOpacity
         onPress={() => toggleDarkMode()}
-        style={styles.btn}>
+        style={{...styles.btn, ...{backgroundColor:isDarkMode? '#001645' : '#caf0f8'}}}>
         <Text style={{color:isDarkMode ? 'white' : 'black'}}>{isDarkMode ? 'Dark Mode' : 'Light Mode'} On</Text>
       </TouchableOpacity>
     </View>

@@ -6,12 +6,12 @@ import {
   FlatList,
   ImageBackground,
 } from 'react-native';
-import React from 'react';
-import {placesData} from '../../constants/localData';
+import React, {useEffect, useState} from 'react';
 import Icon from 'react-native-vector-icons/FontAwesome6';
 import Icon2 from 'react-native-vector-icons/FontAwesome';
 import {lightMode} from '../../constants/appColors';
 import LinearGradient from 'react-native-linear-gradient';
+import {useSelector} from 'react-redux';
 
 const colors = lightMode;
 
@@ -36,18 +36,28 @@ const Item = ({item}) => {
         style={styles.card}>
         <View style={styles.row}>
           <Text style={styles.title}>{item.title}, </Text>
-          <Text  numberOfLines={1} ellipsizeMode="tail" style={styles.txt}>{item.city}</Text>
+          <Text numberOfLines={1} ellipsizeMode="tail" style={styles.txt}>
+            {item.city}
+          </Text>
         </View>
         <View style={{...styles.row, ...{justifyContent: 'space-between'}}}>
-          <View style={{...styles.row, ...{width:'75%'}}}>
+          <View style={{...styles.row, ...{width: '75%'}}}>
             <View style={styles.icon}>
               <Icon name="location-dot" size={12} color={colors.halfWhiteTxt} />
             </View>
-            <Text numberOfLines={1} ellipsizeMode="tail" style={styles.txt}>{item.city}, </Text>
-            <Text numberOfLines={1} ellipsizeMode="tail" style={styles.txt}>{item.country}</Text>
+            <Text numberOfLines={1} ellipsizeMode="tail" style={styles.txt}>
+              {item.city},{' '}
+            </Text>
+            <Text numberOfLines={1} ellipsizeMode="tail" style={styles.txt}>
+              {item.country}
+            </Text>
           </View>
 
-          <View style={{...styles.row, ...{width:'25%', justifyContent:'flex-end'}}}>
+          <View
+            style={{
+              ...styles.row,
+              ...{width: '25%', justifyContent: 'flex-end'},
+            }}>
             <View style={styles.icon}>
               <Icon name="star" size={12} color={colors.halfWhiteTxt} />
             </View>
@@ -60,13 +70,27 @@ const Item = ({item}) => {
 };
 
 const ItemsList = () => {
+  const placesList = useSelector(state => state.places.placesList);
+  const filtredPlaces = useSelector(state => state.places.filtredResult);
+  const selectedCategory = useSelector(state => state.places.selectedCategory);
+
+  const [placesData, setPlacesData] = useState(placesList);
+
+  useEffect(() => {
+    console.log('placesList', placesList);
+    console.log('filtredPlaces', filtredPlaces);
+    if(filtredPlaces.length > 0){
+      setPlacesData(filtredPlaces)
+    }
+  }, [selectedCategory,filtredPlaces]);
+
   return (
     <FlatList
       horizontal
       data={placesData}
       renderItem={({item}) => <Item item={item} />}
       keyExtractor={item => item.id}
-      style={{flex:1}}
+      style={{flex: 1}}
     />
   );
 };
@@ -80,12 +104,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-between',
     marginHorizontal: 10,
-    marginBottom:30,
+    marginBottom: 30,
     width: 270,
     borderRadius: 30,
     overflow: 'hidden',
-    shadowColor:'black',
-    elevation:8
+    shadowColor: 'black',
+    elevation: 8,
   },
   card: {
     backgroundColor: 'gray',

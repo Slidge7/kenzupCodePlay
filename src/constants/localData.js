@@ -32,7 +32,7 @@ const placesData = [
     country: 'Australia',
     city: 'Sydney',
     rate: '4.9',
-    categoryId: 5,
+    categoryId: 1,
     image:'https://i.pinimg.com/736x/8f/e3/c5/8fe3c5f660b0289c8b4cfda227536bba.jpg',
   },
   {
@@ -41,7 +41,7 @@ const placesData = [
     country: 'China',
     city: 'Beijing',
     rate: '4.8',
-    categoryId: 3,
+    categoryId: 4,
     image:'https://i.pinimg.com/564x/9c/66/8c/9c668c71ae2c2ef2e3dffd6e13edb8e2.jpg',
   },
   {
@@ -50,7 +50,7 @@ const placesData = [
     country: 'India',
     city: 'Agra',
     rate: '4.9',
-    categoryId: 5,
+    categoryId: 1,
     image:'https://i.pinimg.com/564x/09/26/c9/0926c96936a9ed364c01b8616cb0e5f0.jpg',
   },
   {
@@ -68,7 +68,7 @@ const placesData = [
     country: 'Italy',
     city: 'Rome',
     rate: '4.9',
-    categoryId: 5,
+    categoryId: 1,
     image:'https://i.pinimg.com/564x/01/a5/3f/01a53f19aa4ae86992b131eb5fe4ec8a.jpg',
   },
   {
@@ -104,7 +104,7 @@ const placesData = [
     country: 'Cambodia',
     city: 'Siem Reap',
     rate: '4.9',
-    categoryId: 5,
+    categoryId: 1,
     image:'https://i.pinimg.com/564x/9c/66/8c/9c668c71ae2c2ef2e3dffd6e13edb8e2.jpg',
   },
   {
@@ -122,7 +122,7 @@ const placesData = [
     country: 'Jordan',
     city: 'Wadi Musa',
     rate: '4.8',
-    categoryId: 3,
+    categoryId: 4,
     image:'https://i.pinimg.com/564x/f8/6d/99/f86d99c340f157cfdcbbaaf64c1d2049.jpg',
   },
   {
@@ -167,7 +167,7 @@ const placesData = [
     country: 'United States',
     city: 'Wyoming',
     rate: '4.8',
-    categoryId: 3,
+    categoryId: 4,
     image:'https://i.pinimg.com/564x/9c/66/8c/9c668c71ae2c2ef2e3dffd6e13edb8e2.jpg',
   },
   {
@@ -214,7 +214,7 @@ const placesData = [
     country: 'United Kingdom',
     city: 'Wiltshire',
     rate: '4.8',
-    categoryId: 3,
+    categoryId: 4,
     image:'https://i.pinimg.com/564x/33/a1/ca/33a1caa6d14553657245b02d37a400bf.jpg',
 
   },
@@ -254,7 +254,7 @@ const placesData = [
     country: 'Germany',
     city: 'Bavaria',
     rate: '4.8',
-    categoryId: 3,
+    categoryId: 4,
     image:'https://i.pinimg.com/564x/f8/6d/99/f86d99c340f157cfdcbbaaf64c1d2049.jpg',
 
   },
